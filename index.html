@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Samira Ennachadi | Portfolio CV </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: radial-gradient(circle at 20% 30%, #0f0f1f, #040408);
+      --surface: #111115;
+      --card: #16161f;
+      --border: #2a2a33;
+      --accent: #ead981;
+      --accent2: #e2c46a;
+      --text: #f0ede8;
+      --muted: #a9a9b5;
+      --radius: 18px;
+      --glow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+ 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.2;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--surface);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 8px;
+    }
+
+    /* navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2rem;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 10, 18, 0.65);
+      border-bottom: 1px solid rgba(234, 217, 129, 0.2);
+      transition: 0.3s;
+    }
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), #f5e6b0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: 0.25s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      scroll-margin-top: 90px;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    /* hero header */
+    #header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-top: 5rem;
+    }
+    .header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      animation: fadeUp 0.8s ease-out;
+    }
+    .avatar-wrap {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 6px rgba(234, 217, 129, 0.2), 0 20px 30px -10px black;
+      transition: transform 0.4s ease;
+    }
+    .avatar-wrap:hover {
+      transform: scale(1.02);
+    }
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .header-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      margin-bottom: 0.8rem;
+    }
+    .header-text h1 span {
+      color: var(--accent);
+      text-shadow: 0 0 8px rgba(234, 217, 129, 0.4);
+    }
+    .title {
+      color: var(--muted);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+    .contacts {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+    .contact-pill {
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+      border-radius: 60px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(22, 22, 31, 0.7);
+      backdrop-filter: blur(4px);
+    }
+    .contact-pill:hover {
+      background: var(--accent);
+      color: #0a0a0a;
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    /* about block */
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      padding: 2rem 2rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .skill-item {
+      margin-bottom: 1.2rem;
+    }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .skill-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #f3e3a3);
+      border-radius: 6px;
+      transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    /* accordion + formation */
+    .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      background: var(--card);
+      overflow: hidden;
+      transition: 0.2s;
+    }
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.8rem;
+      cursor: pointer;
+      background: rgba(0,0,0,0.2);
+    }
+    .accordion-header h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .year {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .accordion-arrow {
+      width: 22px;
+      transition: transform 0.3s;
+    }
+    .accordion-arrow.open {
+      transform: rotate(180deg);
+    }
+    .accordion-body {
+      display: none;
+      padding: 0 1.8rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* projects grid react */
+    #projects-root {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    /* contact form area */
+    .contact-modern {
+      max-width: 650px;
+    }
+    .contact-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-form-group input, .contact-form-group textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.2rem;
+      border-radius: 18px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s;
+    }
+    .contact-form-group input:focus, .contact-form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(234,217,129,0.2);
+    }
+    button {
+      background: var(--accent);
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #0b0b14;
+      cursor: pointer;
+      transition: 0.2s;
+      width: fit-content;
+    }
+    button:hover {
+      background: var(--accent2);
+      transform: scale(0.98);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .error-msg {
+      color: #ff8a7a;
+      font-size: 0.75rem;
+      margin-top: 4px;
+      margin-left: 0.5rem;
+    }
+    input.error, textarea.error {
+      border-color: #ff6b5c;
+    }
+    .success-msg {
+      background: #1e3a2f;
+      border: 1px solid #8bc34a;
+      padding: 1rem 1.5rem;
+      border-radius: 40px;
+      color: #dcf5d0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-section.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* responsive */
+    @media (max-width: 780px) {
+      nav {
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 0.8rem;
+      }
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .header-text h1 {
+        font-size: 2rem;
+      }
+      .avatar-wrap {
+        width: 180px;
+        height: 180px;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding: 3rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">S.ENNACHADI</div>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HOME / HERO -->
+    <section id="accueil">
+      <div id="header">
+        <div class="header-inner">
+          <div class="avatar-wrap">
+            <img src="photo.jpeg" alt="Samira Ennachadi" />
+          </div>
+          <div class="header-text">
+            <h1>Samira <span>ENNACHADI</span></h1>
+            <p class="title">🎓 Étudiante en Informatique ·Université des Sciences Semlalia (FSSM)-Marrakech</p>
+            <div class="contacts">
+              <a class="contact-pill" href="mailto:samiraennachadi477@gmail.com"><i class="fas fa-envelope"></i> samiraennachadi@email.com</a>
+              <a class="contact-pill" href="https://github.com/sennachadi7077-web" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a class="contact-pill" href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="a-propos" class="reveal-section">
+      <h2 class="section-title">✨ À propos de moi</h2>
+      <div class="about-card">
+        <p>
+    Je suis <strong>Samira Ennachadi</strong>, étudiante en deuxième année à la Faculté des Sciences Semlalia (FSSM), spécialité Informatique.  
+    Passionnée par la programmation et le développement web, je maîtrise les langages C, C++ ainsi que les technologies web telles que HTML, CSS et JavaScript.
+    <br><br>
+    Mon parcours m’a permis de développer de solides compétences en algorithmique, analyse des systèmes et développement d’applications.  
+    Curieuse, motivée et dotée d’un bon esprit d’équipe, je m’intéresse particulièrement à la création d’interfaces modernes et intuitives.
+    <br><br>
+    Mon objectif est de construire une carrière dans le développement logiciel et web au sein d’un environnement innovant, tout en continuant à développer mes compétences techniques.
+  </p>
+      </div>
+    </section>
+
+    <!-- SKILLS with dynamic bars (jQuery animation) -->
+    <section id="skills" class="reveal-section">
+      <h2 class="section-title">⚡ Compétences techniques</h2>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-item"><div class="skill-label"><span>HTML5 / CSS3</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+          <div class="skill-item"><div class="skill-label"><span>JavaScript</span><span>60%</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div></div>
+          <div class="skill-item"><div class="skill-label"><span>React.js</span><span>55%</span></div><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div></div>
+          <div class="skill-item"><div class="skill-label"><span>jQuery </span><span>50%</span></div><div class="skill-bar"><div class="skill-fill" data-width="50"></div></div></div>
+        </div>
+        <div>
+          <div class="skill-item"><div class="skill-label"><span>C / C++</span><span>65%</span></div><div class="skill-bar"><div class="skill-fill" data-width="65"></div></div></div>
+          <div class="skill-item"><div class="skill-label"><span>MySQL / SQL</span><span>30%</span></div><div class="skill-bar"><div class="skill-fill" data-width="30"></div></div></div>
+          <div class="skill-item"><div class="skill-label"><span>Git & GitHub</span><span>60%</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION / ACCORDION jQuery -->
+    <section id="formation" class="reveal-section">
+      <h2 class="section-title">📚 Formation & Parcours</h2>
+      <div class="accordion-item">
+        <div class="accordion-header"><div><h3>Licence Informatique (MIP) – FSSM Marrakech</h3><span style="font-size:.8rem;color:#aaa">Faculté des Sciences Semlalia</span></div><div style="display:flex;gap:12px;align-items:center"><span class="year">2024 – 2025</span><svg class="accordion-arrow" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-body">Bases fondamentales en mathématiques, algorithmique, introduction aux systèmes informatiques et programmation impérative (C). Projets collaboratifs.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><div><h3>DUT Informatique (en cours)</h3><span style="font-size:.8rem;color:#aaa">IUT – FSSM, Marrakech</span></div><div style="display:flex;gap:12px;align-items:center"><span class="year">2025 – 2026</span><svg class="accordion-arrow" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-body">Développement web avancé, structures de données, conception orientée objet (C++), gestion de bases de données, et méthodologies agiles.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><div><h3>Baccalauréat Sciences Physiques – Mention Assez Bien</h3><span style="font-size:.8rem;color:#aaa">Lycée HMDE Ben Naser, Zagora, Morocco</span></div><div style="display:flex;gap:12px;align-items:center"><span class="year">2023 – 2024</span><svg class="accordion-arrow" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-body">Formation scientifique rigoureuse, raisonnement analytique, physique générale et mathématiques approfondies.</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS REACT ROOT -->
+    <section id="projets" class="reveal-section">
+      <h2 class="section-title">🚀 Projets & réalisations</h2>
+      <div id="projects-root"></div>
+    </section>
+
+    <!-- CONTACT REACT FORM + validation (jQuery integrated) -->
+    <section id="contact" class="reveal-section">
+      <h2 class="section-title">📬 Contactez-moi</h2>
+      <div id="contact-root" class="contact-modern"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Samira Ennachadi — Tous droits réservés. Design élégant & animations dynamiques.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      
+      function animateSkillBars() {
+        $('.skill-fill').each(function(){
+          var $this = $(this);
+          var offset = $this.offset().top;
+          var scrollPos = $(window).scrollTop();
+          var winHeight = $(window).height();
+          if(offset < scrollPos + winHeight - 100 && $this.width() === 0){
+            var widthVal = $this.data('width');
+            $this.css('width', widthVal + '%');
+          }
+        });
+      }
+      $(window).on('scroll', animateSkillBars);
+      animateSkillBars();
+
+      // ---------- ACCORDION (formation & interactive) ----------
+      $('.accordion-header').on('click', function(e){
+        var $body = $(this).siblings('.accordion-body');
+        var $arrow = $(this).find('.accordion-arrow');
+        var isOpen = $body.is(':visible');
+        
+        $('.accordion-body').slideUp(280);
+        $('.accordion-arrow').removeClass('open');
+        
+        if(!isOpen){
+          $body.slideDown(280);
+          $arrow.addClass('open');
+        }
+      });
+
+      // ---------- REVEAL ON SCROLL (fade-up sections) ----------
+      function revealSections() {
+        $('.reveal-section').each(function(){
+          var elementTop = $(this).offset().top;
+          var viewBottom = $(window).scrollTop() + $(window).height();
+          if(elementTop < viewBottom - 80) {
+            $(this).addClass('revealed');
+          }
+        });
+      }
+      $(window).on('scroll', revealSections);
+      revealSections();
+      
+      // Global validation helper for React form
+      window.validateContactForm = function(nom, email, message) {
+        let ok = true;
+        $('.error-msg').text('');
+        $('input, textarea').removeClass('error');
+        if($.trim(nom) === "") {
+          $('#err-nom').text("Nom requis.");
+          $('#f-nom').addClass('error');
+          ok = false;
+        }
+        if($.trim(email) === "") {
+          $('#err-email').text("Email requis.");
+          $('#f-email').addClass('error');
+          ok = false;
+        } else if(!/^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(email)) {
+          $('#err-email').text("Email invalide (ex: nom@domaine.com)");
+          $('#f-email').addClass('error');
+          ok = false;
+        }
+        if($.trim(message) === "") {
+          $('#err-msg').text("Veuillez écrire un message.");
+          $('#f-msg').addClass('error');
+          ok = false;
+        }
+        return ok;
+      };
+    });
+  </script>
+
+  <!-- Babel React components : ProjectCards + ContactForm dynamic -->
+  <script type="text/babel">
+    const { useState } = React;
+
+    // Project card updated with dark theme and better integration
+    function ProjectCard({ titre, description, technologies, lien, emoji }) {
+      const [hover, setHover] = useState(false);
+      return (
+        <div 
+          onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
+          style={{
+            background: 'var(--card)',
+            border: `1px solid ${hover ? 'var(--accent)' : 'var(--border)'}`,
+            borderRadius: '24px',
+            padding: '1.6rem',
+            transition: 'all 0.3s ease',
+            transform: hover ? 'translateY(-6px)' : 'none',
+            boxShadow: hover ? '0 20px 30px -12px rgba(0,0,0,0.5)' : '0 4px 12px rgba(0,0,0,0.2)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.9rem'
+          }}
+        >
+          <div style={{ fontSize: '2.5rem' }}>{emoji}</div>
+          <h3 style={{ fontFamily: 'Playfair Display', fontSize: '1.3rem', color: 'var(--accent)' }}>{titre}</h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--muted)', lineHeight: 1.6 }}>{description}</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {technologies.map(tech => (
+              <span key={tech} style={{ background: '#2a2438', color: '#ead981', padding: '0.2rem 0.8rem', borderRadius: '30px', fontSize: '0.7rem', fontWeight: 500 }}>{tech}</span>
+            ))}
+          </div>
+          {lien && (
+            <a href={lien} target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 500, fontSize: '0.85rem', marginTop: 'auto', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              Explorer <i className="fas fa-arrow-right"></i>
+            </a>
+          )}
+        </div>
+      );
+    }
+
+    const projectList = [
+      {
+        emoji: "🎬",
+        titre: "Site web de cinéma",
+        description: "Site web interactif pour explorer les films, séances et réservations. Interface responsive moderne avec filtres dynamiques (HTML/CSS/JS).",
+        technologies: ["HTML5", "CSS3", "JavaScript"],
+        lien: "https://sennachadi7077-web.github.io/min-projet/"
+      },
+      {
+        emoji: "🎲",
+        titre: "Jeu Kachkache (C++)",
+        description: "Jeu de stratégie et réflexion codé en C++ avec logique modulaire et gestion d'IA basique. Projet universitaire complet.",
+        technologies: ["C++", "POO", "SFML"],
+        lien: "https://github.com/sennachadi7077-web/min-projet-c-.git"
+      },
+      
+    ];
+
+    ReactDOM.render(
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        {projectList.map((proj, idx) => <ProjectCard key={idx} {...proj} />)}
+      </div>,
+      document.getElementById('projects-root')
+    );
+
+    // Contact Form React
+    function ContactFormReact() {
+      const [nom, setNom] = useState('');
+      const [email, setEmail] = useState('');
+      const [message, setMessage] = useState('');
+      const [sent, setSent] = useState(false);
+
+      const handleSubmit = () => {
+        const isValid = window.validateContactForm(nom, email, message);
+        if (isValid) {
+          setSent(true);
+          setTimeout(() => setSent(false), 4000);
+          setNom(''); setEmail(''); setMessage('');
+          $('input, textarea').removeClass('error');
+          $('.error-msg').text('');
+        }
+      };
+
+      if (sent) {
+        return (
+          <div className="success-msg" style={{ background: '#1c382e', padding: '1rem', borderRadius: '28px' }}>
+            <i className="fas fa-check-circle"></i> ✅ Merci {nom || "cher visiteur"}, votre message a bien été envoyé ! Je vous répondrai rapidement.
+          </div>
+        );
+      }
+
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div className="contact-form-group">
+            <input id="f-nom" type="text" placeholder="Votre nom complet" value={nom} onChange={e => setNom(e.target.value)} />
+            <div id="err-nom" className="error-msg"></div>
+          </div>
+          <div className="contact-form-group">
+            <input id="f-email" type="email" placeholder="Adresse email" value={email} onChange={e => setEmail(e.target.value)} />
+            <div id="err-email" className="error-msg"></div>
+          </div>
+          <div className="contact-form-group">
+            <textarea id="f-msg" rows="4" placeholder="Votre message..." value={message} onChange={e => setMessage(e.target.value)}></textarea>
+            <div id="err-msg" className="error-msg"></div>
+          </div>
+          <button onClick={handleSubmit} style={{ background: 'var(--accent)', width: 'fit-content' }}><i className="fas fa-paper-plane"></i> Envoyer le message</button>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<ContactFormReact />, document.getElementById('contact-root'));
+  </script>
+</body>
+</html>
